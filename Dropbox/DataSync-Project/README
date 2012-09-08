@@ -1,0 +1,47 @@
+This Script could Sync your website's data to your dropbox.
+Version: 1.0 ENG-Public
+Author: Ling Xi (Translated into English by Rockia)
+Contact: loli@lolis.info
+Website: 
+- Lingxi's : http://lolis.info/
+- Rockia's : http://rockia.com/
+This piece of shit should be used under the CC BY-NC-SA 3.0 LICENSE.
+
+
+Installation
+============
+
+To install this script with dropbox, you need to link this computer to your dropbox.
+
+Step 1) Git this Script and switch to the dierctory where you gited.
+Step 2) Change the permission in order to make it executeable.
+	[root@localhost ~]# chmod +x ./dropbox_sync.sh
+Step 3) Install dropbox and Link your computer.
+	[root@localhost ~]# ./dropbox_sync.sh install &
+	After that, the dropbox will be installed automatically, you should copy the linking url to your browser to complete the linking.
+Step 4) The Script will exit when all finished, you should edit this script and modify what you need to enter.
+	[root@localhost ~]# vi dropbox_sync.sh
+	You need to edit Line 23 to Line 38, there is some settings should be initialized.
+Step 5) After all, try to run this script and enjoy it!
+	[root@localhost ~]# ./dropbox_sync.sh &
+
+Usage
+============
+
+You can run it once by this command:
+
+	./dropbox_sync.sh &
+
+For daily automatic backup, you can add it to your crontab. If you put it under /root/ and you want to backup at 23:00 everyday, that's the command:
+	crontab -e
+Insert a new line:
+	* 23 * * * flock -xn /var/run/dropbox_sync.lock -c '/root/dropbox_sync.sh'
+Save and exit.
+
+Other notes
+=============
+
+Tested platforms
+Centos 5.x 6.x
+
+Please send me feedback if you find it works well on your platform! Thank you!

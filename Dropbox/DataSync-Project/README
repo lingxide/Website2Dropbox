@@ -13,7 +13,7 @@ Installation
 
 To install this script with dropbox, you need to link this computer to your dropbox.
 
-Step 1) Git this Script and switch to the dierctory where you gited.
+Step 1) Git this Script and switch to the directory where you gited.
 Step 2) Change the permission in order to make it executeable.
 	[root@localhost ~]# chmod +x ./dropbox_sync.sh
 Step 3) Install dropbox and Link your computer.
